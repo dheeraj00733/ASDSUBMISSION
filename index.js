@@ -43,6 +43,10 @@ app.get(
         res.send(`Hi ${req.user.displayName}`);
     },
 );
+app.get("/failure", (req, res) => {
+    res.status(401).send("Google authentication failed. Please try again.");
+});
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
